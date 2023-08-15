@@ -1,0 +1,18 @@
+export const colors = Object.freeze({
+  color1: "#ae7be3",
+  color2: "#ebd8ff",
+  color3: "#5736a3",
+  color4: "#fbf8ff",
+  color5: "#471ca9",
+  color6: "#4b2a99",
+  color7: "#373737",
+  color8: "#5CD3A8",
+  colorWhite: "#FFF;",
+  colorOrange: "#F4C550",
+  colorBlack: "#121417",
+  colorText: "#121417",
+  colorLightOrange: "#fbe9ba",
+  colorLightBG: "#f8f8f8",
+  colorLigthText: "#8A8A89",
+  colorGreen: "#38CD3E",
+});
