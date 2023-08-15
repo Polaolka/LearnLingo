@@ -79,59 +79,16 @@ export const ModalStyled = styled.div`
   }
 
   & .close {
-    background-color: #eff1f3;
-    width: 100%;
-    height: 40px;
-    border: none;
-    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     padding: 0;
+
     display: flex;
     align-items: center;
 
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      background-color: transparent;
-      border: none;
-
-      width: 20px;
-      height: 20px;
-      right: 24px;
-      top: 24px;
-      ${transition("transform")}
-
-      &:hover {
-        transform: scale(1.2);
-      }
-
-      &__icon {
-        fill: #000000;
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-
-  & .return__icon {
-    margin-left: 20px;
-    width: 12px;
-    height: 7px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
-    ${transition("transform")}
-
-    &:hover {
-      transform: scale(1.2);
-    }
-
-    @media screen and (min-width: ${mediaSizes.tablet}) {
-      position: absolute;
-    }
   }
 `;
-
-// export const ModalContent = styled.div`
-//   max-height: calc(100vh - 60px);
-//   overflow-y: auto;
-// `;

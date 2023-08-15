@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "components/Styled/Button.styled";
-import { TeacherStyled } from "./Teachers.styled";
+import { TeachersStyled } from "./Teachers.styled";
 import TeacherCard from "components/TeacherCard/TeacherCard";
 import { getAllTeachers } from "redux/teachers/teachersOperations";
 import Filter from "components/Filter/Filter";
 import Container from "components/Container/Container";
+import { Caption } from "components/Form/Form.styled";
+import { Loader } from "components/Loader/Loader";
 
 const CARDS_COUNT = 4;
 
@@ -13,6 +15,7 @@ function Teachers() {
   const dispatch = useDispatch();
   const scrollRef = useRef(null);
   const teachers = useSelector((state) => state.teachers.teachers);
+  const isLoading = useSelector((state) => state.loading.isLoading);
 
   const [languageFilter, setLanguageFilter] = useState(false);
   const [levelFilter, setLevelFilter] = useState(false);
@@ -51,17 +54,25 @@ function Teachers() {
         setLevelFilter={(data) => setLevelFilter(data)}
         setPriceFilter={(data) => setPriceFilter(data)}
       />
-      <TeacherStyled>
-        {displayedTeachers?.map((el) => (
-          <TeacherCard key={el.id} teacher={el} levelFilter={levelFilter} />
-        ))}
-      </TeacherStyled>
-      <Button onClick={loadMoreHandle} className="loadMore">
-        Load more
-      </Button>
+      {isLoading?(<Loader/>):(<TeachersStyled>
+        {displayedTeachers?.length > 0 ? (
+          displayedTeachers?.map((el) => (
+            <TeacherCard key={el.id} teacher={el} levelFilter={levelFilter} />
+          ))
+        ) : (
+          <Caption>Unfortunately, no teacher was found.</Caption>
+        )}
+      </TeachersStyled>)}
+      {displayedTeachers?.length > CARDS_COUNT && (
+        <Button onClick={loadMoreHandle} className="loadMore">
+          Load more
+        </Button>
+      )}
+
       <div ref={scrollRef} style={{ marginTop: "40px" }}></div>
     </Container>
   );
 }
 
 export default Teachers;
+

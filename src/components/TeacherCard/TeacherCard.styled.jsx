@@ -1,78 +1,90 @@
 import styled from "@emotion/styled";
 import { colors } from "constants";
-import { container } from "helpers";
 import { HiOutlineHeart, HiHeart } from "react-icons/hi";
 import { HiOutlineBookOpen } from "react-icons/hi";
 import { HiStar } from "react-icons/hi";
 
-
 import { mediaSizes } from "constants";
 
 export const TeacherCardStyled = styled.div`
-  ${container};
-  display: flex;
+  position: relative;
   width: 100%;
-  padding: 24px;
+  padding: 12px;
+
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
   align-items: flex-start;
-  gap: 48px;
-  background-color: ${colors.colorWhite};
+
   border-radius: 24px;
+  background: ${colors.colorWhite};
 
   @media screen and (min-width: ${mediaSizes.tablet}) {
-    padding: 18px;
-    gap: 36px;
+    flex-wrap: nowrap;
+    padding: 16px;
+    gap: 30px;
   }
 
   @media screen and (min-width: ${mediaSizes.desktop}) {
-    width: 1184px;
     padding: 24px;
-    gap: 48px;
+    gap: 40px;
   }
 `;
 
 export const TeacherImgThumb = styled.div`
   width: 120px;
   height: 120px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+
   border-radius: 50%;
   border: 3px solid #fbe9ba;
   background: #fff;
-  padding: 8px;
-  overflow: hidden;
 `;
 
 export const TeacherImg = styled.img`
   display: block;
   border-radius: 50%;
-  height: 100%;
-  width: 100%;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 `;
 
-export const InfoTeacherWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* width: calc(100%-168px); */
-`;
+export const InfoTeacherWrapper = styled.div``;
 
 export const InfoTeacherHeader = styled.div`
+  margin-bottom: 32px;
+
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: start;
+
+  @media screen and (min-width: ${mediaSizes.desktop}) {
+    width: 968px;
+    justify-content: space-between;
+  }
   & p {
     color: ${colors.colorLigthText};
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    flex-basis: 80px;
   }
   & ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    gap: 32px;
+    gap: 16px;
+
+    @media screen and (min-width: ${mediaSizes.desktop}) {
+      justify-content: space-between;
+    }
+
     & :not(:last-child) {
       &:after {
         content: "";
@@ -114,8 +126,7 @@ export const LevelsItem = styled.ul`
   border-radius: 35px;
   border: 1px solid rgba(18, 20, 23, 0.2);
 
-  color: var(--main-black);
-  font-family: Roboto;
+  color: ${colors.colorText};
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -126,15 +137,21 @@ export const LevelsItem = styled.ul`
 `;
 
 export const HeartLineStyled = styled(HiOutlineHeart)`
-  width: 26px;
-  height: 26px;
-  margin-left: 64px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
 `;
 
 export const HeartFillStyled = styled(HiHeart)`
-  width: 26px;
-  height: 26px;
-  margin-left: 64px;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  transform: scale(1);
+  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
   fill: ${colors.colorOrange};
 `;
 
@@ -147,8 +164,17 @@ export const StarStyled = styled(HiStar)`
   fill: ${colors.colorOrange};
 `;
 
-export const TeachersName = styled.p`
-  margin-top: 8px;
+export const TeacherNameBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  & p {
+    color: ${colors.colorLigthText};
+    margin: 0;
+  }
+`;
+
+export const TeachersName = styled.h3`
   color: ${colors.colorText};
   font-size: 24px;
   font-weight: 500;

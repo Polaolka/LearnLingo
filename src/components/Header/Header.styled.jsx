@@ -3,6 +3,7 @@ import { transition } from "helpers";
 import { colors } from "constants";
 import { NavLink } from "react-router-dom";
 import { FiLogIn, FiLogOut } from "react-icons/fi";
+import { mediaSizes } from "constants";
 
 export const HeaderStyled = styled.header`
   z-index: 10;
@@ -137,5 +138,23 @@ export const RegistrationBtn = styled.button`
 
   &:hover {
     opacity: 0.8;
+  }
+`;
+export const MenuButton = styled.button`
+  border: none;
+  padding: 10px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const Icon = styled.svg`
+  width: 12px;
+  height: 12px;
+
+  @media screen and (min-width: ${mediaSizes.mobile}) {
+    width: 14px;
+    height: 14px;
+    z-index: 10;
   }
 `;

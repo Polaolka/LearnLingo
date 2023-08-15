@@ -27,7 +27,6 @@ export const store = configureStore({
     auth: persistReducer(authPersistConfig, authReducer),
     teachers: teachersReducer,
     loading: loadingReducer,
-    // favorite: favoriteReduser,
     general: generalReducer,
     modal: modalOpenedReducer,
     user: userReducer,

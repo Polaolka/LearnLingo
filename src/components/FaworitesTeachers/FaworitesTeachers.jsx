@@ -5,8 +5,10 @@ import { FaworitesTeachersStyled } from "./FaworitesTeachers.styled";
 import TeacherCard from "components/TeacherCard/TeacherCard";
 import { getAllTeachers } from "redux/teachers/teachersOperations";
 import Filter from "components/Filter/Filter";
+import Container from "components/Container/Container";
+import { Caption } from "components/Form/Form.styled";
 
-const CARDS_COUNT = 3;
+const CARDS_COUNT = 4;
 
 function FaworitesTeachers() {
 
@@ -46,21 +48,29 @@ function FaworitesTeachers() {
 
 
   return (
-    <>
+    <Container>
         <Filter
             teachers={teachers}
             setLanguageFilter={(data) => setLanguageFilter(data)}
             setLevelFilter={(data) => setLevelFilter(data)}
             setPriceFilter={(data) => setPriceFilter(data)}/>
       <FaworitesTeachersStyled>
-        {displayedTeachers.map((el) => (
-          <TeacherCard key={el.id} teacher={el} />
-        ))}
+      {displayedTeachers?.length > 0 ? (
+          displayedTeachers?.map((el) => (
+            <TeacherCard key={el.id} teacher={el} levelFilter={levelFilter} />
+          ))
+        ) : (
+          <Caption>Unfortunately, no teacher was found.</Caption>
+        )}
       </FaworitesTeachersStyled>
-      <Button onClick={loadMoreHandle} className="loadMore">Load more</Button>
+      {displayedTeachers?.length > CARDS_COUNT && (
+        <Button onClick={loadMoreHandle} className="loadMore">
+          Load more
+        </Button>
+      )}
       
       <div ref={scrollRef} style={{ marginTop: "100px" }}></div>
-    </>
+    </Container>
   );
 }
 
