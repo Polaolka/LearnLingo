@@ -37,11 +37,6 @@ export const RegisterForm = ({ setIsRegModalOpened }) => {
 
   const message = useSelector(selectError);
 
-  const redirection = () => {
-    const path = "/login";
-    navigate(path);
-  };
-
   const onClickHandler = () => {
     setPasswordShown((state) => !state);
   };

@@ -21,7 +21,7 @@ export const LogoStyled = styled(NavLink)`
 
 export const Name = styled.div`
 margin-left: 8px;
-color: #121417;
+color: ${colors.colorText};
 font-size: 20px;
 font-weight: 500;
 line-height: 1.2;
