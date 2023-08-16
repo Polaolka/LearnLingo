@@ -18,7 +18,7 @@ The application consists of 3 pages:
 • private page "Favorites" with teachers who were added by the user to "favorites"
 <h3 align="left">Technologies Used</h3>
 <strong>Frontend:</strong> JavaScript, React, Redux, Axios, Sass, Styled Components.</br>
-<strong>Backend: mockapi.io</strong>
+<strong>Backend: Realtime Database</strong>
 </div>
 
 <h2 align="left">Getting Started</h2>
