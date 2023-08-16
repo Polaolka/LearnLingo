@@ -28,7 +28,7 @@ export const MainStyled = styled.div`
     padding: 49px 32px;
   }
 
-  @media screen and (min-width: ${mediaSizes.desctop}) {
+  @media screen and (min-width: ${mediaSizes.desktop}) {
     align-items: flex-start;
     width: 720px;
     height: 530px;
@@ -49,9 +49,9 @@ export const ImgThumbStyled = styled.div`
     padding: 49px 32px;
   }
 
-  @media screen and (min-width: ${mediaSizes.desctop}) {
+  @media screen and (min-width: ${mediaSizes.desktop}) {
     align-items: flex-start;
-    max-width: 720px;
+    max-width: 568px;
     padding: 98px 64px;
   }
 `;
