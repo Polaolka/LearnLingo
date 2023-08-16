@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { colors } from "constants";
 
 export const CardsPageStyled = styled.div`
-  margin-top: 88px;
+  padding-top: 96px;
   flex-direction: column;
   display: flex;
   gap: 24px;

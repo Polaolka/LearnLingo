@@ -13,6 +13,7 @@ export const HeaderStyled = styled.header`
   left: 0px;
   width: 100%;
   background-color: ${colors.colorWhite};
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
 `;
 
 export const HeaderWrapper = styled.div`

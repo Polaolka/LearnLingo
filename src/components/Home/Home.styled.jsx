@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
+import { mediaSizes } from "constants";
 import { colors } from "constants";
-import { container, transition } from "helpers";
+import { transition } from "helpers";
 import avatar from "images/avatar@2x.png";
 import { NavLink } from "react-router-dom";
 
 export const HomeStyled = styled.div`
-  ${container};
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -17,16 +17,27 @@ export const MainStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
-  width: 720px;
-  height: 530px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
   flex-shrink: 0;
   border-radius: 30px;
   background: ${colors.colorLightBG};
+
+  @media screen and (min-width: ${mediaSizes.tablet}) {
+    padding: 49px 32px;
+  }
+
+  @media screen and (min-width: ${mediaSizes.desctop}) {
+    align-items: flex-start;
+    width: 720px;
+    height: 530px;
+    padding: 98px 64px;
+  }
 `;
 
 export const ImgThumbStyled = styled.div`
-  width: 568px;
+  width: 100%;
   height: 530px;
   flex-shrink: 0;
   position: relative;
@@ -34,6 +45,15 @@ export const ImgThumbStyled = styled.div`
   background: ${colors.colorLightOrange};
   overflow: hidden;
   z-index: 1;
+  @media screen and (min-width: ${mediaSizes.tablet}) {
+    padding: 49px 32px;
+  }
+
+  @media screen and (min-width: ${mediaSizes.desctop}) {
+    align-items: flex-start;
+    max-width: 720px;
+    padding: 98px 64px;
+  }
 `;
 
 export const FaceImgStyled = styled.img`
@@ -57,16 +77,23 @@ export const Text = styled.div`
   margin-bottom: 64px;
   & h1 {
     color: ${colors.colorText};
-    max-width: 548px;
+    width: 100%;
+    @media screen and (min-width: ${mediaSizes.desctop}) {
+      max-width: 548px;
+    }
   }
 
   & p {
     color: #121417;
     font-size: 16px;
     font-weight: 400;
-    line-height: 22px; /* 137.5% */
+    line-height: 1.38;
     letter-spacing: -0.32px;
-    max-width: 471px;
+    width: 100%;
+    @media screen and (min-width: ${mediaSizes.desctop}) {
+      max-width: 471px;
+    }
+    
   }
   & span {
     color: ${colors.colorText};

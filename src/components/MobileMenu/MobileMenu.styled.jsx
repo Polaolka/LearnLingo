@@ -13,7 +13,7 @@ export const Menu = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   padding-top: 60px;
-  background-color: ${colors.color5};
+  background-color: ${colors.colorOrange};
   z-index: 200;
 `;
 
@@ -24,17 +24,18 @@ export const Link = styled(NavLink)`
   line-height: 1.22;
   text-align: center;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: ${colors.color2};
+  color: ${colors.colorWhite};
 
   @media screen and (min-width: ${mediaSizes.mobile}) {
     font-size: 24px;
     line-height: 1.2;
+    
   }
 
   &.active {
     color: #fff;
     font-weight: 700;
+    text-decoration: underline;
   }
 `;
 

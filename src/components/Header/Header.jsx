@@ -30,8 +30,6 @@ function Header() {
   const login = useSelector(selectUserName);
 
   const [showBurgerIcon, setShowBurgerIcon] = useState(false);
-  const [isUserInfoShown, setUserInfoShown] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoginModalOpened, setIsLoginModalOpened] = useState(false);
   const [isRegModalOpened, setIsRegModalOpened] = useState(false);
@@ -53,9 +51,8 @@ function Header() {
   }
 
   const clickHandler = useCallback(() => {
-    if (!isAuth) return;
     setIsMobileMenuOpen(state => !state);
-  }, [isAuth])
+  }, [])
 
   useEffect(() => {
     if (
@@ -91,15 +88,8 @@ function Header() {
       } else {
         setShowBurgerIcon(false);
       }
-      if (window.innerWidth > parseInt(mediaSizes.mobile)) {
-        setUserInfoShown(true);
-      } else {
-        setUserInfoShown(false);
-      }
     };
     handleResize();
-
-    setIsDesktop(window.innerWidth >= parseInt(mediaSizes.desktop));
 
     window.addEventListener("resize", handleResize);
 
@@ -166,7 +156,6 @@ function Header() {
 
             {showBurgerIcon && (
             <MenuButton
-              style={{ marginLeft: isUserInfoShown ? '51px' : 'auto' }}
               onClick={clickHandler}
             >
               {isMobileMenuOpen ? (
