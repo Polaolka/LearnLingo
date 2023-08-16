@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bb0db342.css",
+    "main.js": "/static/js/main.cb372528.js",
+    "static/js/820.df3c7950.chunk.js": "/static/js/820.df3c7950.chunk.js",
+    "static/js/144.8eae58eb.chunk.js": "/static/js/144.8eae58eb.chunk.js",
+    "static/js/670.9620a2f2.chunk.js": "/static/js/670.9620a2f2.chunk.js",
+    "static/js/617.7fd1d713.chunk.js": "/static/js/617.7fd1d713.chunk.js",
+    "static/js/543.e1f8293a.chunk.js": "/static/js/543.e1f8293a.chunk.js",
+    "static/media/avatar_curly.png": "/static/media/avatar_curly.2fd2b94902501584b2eb.png",
+    "static/media/avatar@2x.png": "/static/media/avatar@2x.557969cfb75309c4a38c.png",
+    "static/media/sprite.svg": "/static/media/sprite.857647352a6a2caa0b0d2ff70dc1f9d2.svg",
+    "static/media/Yellow_mac.svg": "/static/media/Yellow_mac.0e6ef8a4a0582ea3804a50b50b57daf2.svg",
+    "index.html": "/index.html",
+    "static/media/ukraine_logo.svg": "/static/media/ukraine_logo.d34743a6d4214a7edfd037c74ed2da93.svg",
+    "main.bb0db342.css.map": "/static/css/main.bb0db342.css.map",
+    "main.cb372528.js.map": "/static/js/main.cb372528.js.map",
+    "820.df3c7950.chunk.js.map": "/static/js/820.df3c7950.chunk.js.map",
+    "144.8eae58eb.chunk.js.map": "/static/js/144.8eae58eb.chunk.js.map",
+    "670.9620a2f2.chunk.js.map": "/static/js/670.9620a2f2.chunk.js.map",
+    "617.7fd1d713.chunk.js.map": "/static/js/617.7fd1d713.chunk.js.map",
+    "543.e1f8293a.chunk.js.map": "/static/js/543.e1f8293a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bb0db342.css",
+    "static/js/main.cb372528.js"
+  ]
+}
