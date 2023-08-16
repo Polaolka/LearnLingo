@@ -12,9 +12,10 @@ LearnLingo React App is an application for a company that offers to use the serv
 
 <h2 align="left">Features</h2>
 <div align="left">
-User List: View a list of users with their basic information.
-Follow/Unfollow: Follow or unfollow users to stay updated with their tweets.
-User Tweets: View all tweets from a selected user on a separate page.
+The application consists of 3 pages:
+• a “Home” page with a list of company benefits and a button inviting you to start working with the application.
+• the "Teachers" page, which contains a list of teachers that the user can filter by the language of teaching, by the level of knowledge of the students with whom the teacher works and the price per hour of class.
+• private page "Favorites" with teachers who were added by the user to "favorites"
 <h3 align="left">Technologies Used</h3>
 <strong>Frontend:</strong> JavaScript, React, Redux, Axios, Sass, Styled Components.</br>
 <strong>Backend: mockapi.io</strong>
@@ -30,7 +31,13 @@ User Tweets: View all tweets from a selected user on a separate page.
 Contributions are welcome! If you find any issues or have suggestions for improvement, please feel free to submit a pull request.
 </div>
 
-<h2 align="left">License</h2>
-<div align="left">
-This project is licensed under the MIT License.
-</div>
+### Developers
+The project was implemented by:
+
+<p float="left">
+  <a href="https://github.com/Polaolka">
+  	<img width="125" src="https://avatars.githubusercontent.com/u/101866764" alt="Olga Polishchuk" border="0">
+   </a>
+</p>
+
+- [**Olga Polishchuk**: Full-stack developer](https://www.linkedin.com/in/polishchuk-olha/)
