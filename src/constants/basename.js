@@ -1,4 +1,4 @@
-// const BASENAME = "/LearnLingo";
-const BASENAME = "/";
+const BASENAME = "/LearnLingo";
+// const BASENAME = "/";
 
 export default BASENAME;
