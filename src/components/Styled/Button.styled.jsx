@@ -43,12 +43,13 @@ export const Button = styled.button`
     opacity: 0.8;
   }
   &.loadMore {
-    margin: 0 auto;
+    display: block;
+    margin: 12px auto 0 auto;
     width: 183px;
     padding: 16px 48px;
   }
   &.orderBtn {
-    margin-bottom: 32px;
+    margin-top: 32px;
     margin-right: auto;
     width: 233px;
     padding: 16px 48px;

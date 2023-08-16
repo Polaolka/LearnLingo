@@ -39,7 +39,6 @@ const authSlice = createSlice({
       })
       .addCase(registerUser.rejected, (state, { payload }) => {
         state.error = payload;
-        console.log(state.error);
         toast.info(`error: ${payload}`);
       })
       .addCase(logInUser.fulfilled, (state, { payload }) => {

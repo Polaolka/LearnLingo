@@ -18,7 +18,6 @@ export const getAllTeachers = createAsyncThunk(
 
         return allTeachers;
       } else {
-        console.log("No data available");
         toast.warn("No data available");
       }
     } catch (error) {
@@ -43,14 +42,11 @@ export const d = createAsyncThunk(
         const renovatedTeacherFollowers = teacherFollowers.filter(
           (value) => value !== data.userId
         );
-        console.log(renovatedTeacherFollowers);
-
         await update(ref(db, data.id), {
           followers: renovatedTeacherFollowers,
         });
         return teacherFollowers;
       } else {
-        console.log("No data available");
         toast.warn("No data available");
         return [];
       }
@@ -61,7 +57,9 @@ export const d = createAsyncThunk(
   }
 );
 
-///////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
+// цей код було використано для додавання викладачів з заданим id //
+////////////////////////////////////////////////////////////////////
 
 // export const addTeachers = createAsyncThunk(
 //   "teachers/addTeachers",

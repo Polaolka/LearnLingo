@@ -4,20 +4,23 @@ import { colors } from "constants";
 
 export const ListStyled = styled.ul`
   margin-top: 24px;
-  padding: 40px 120px;
+  padding: 24px;
   width: 100%;
   border-radius: 30px;
   border: 1.5px dashed ${colors.colorOrange};
-  
+
   display: flex;
   flex-wrap: wrap;
+  gap: 24px;
   max-width: 100%;
   row-gap: 12px;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
-  @media screen and (max-width: ${mediaSizes.desctop}) {
+  @media screen and (min-width: ${mediaSizes.desktop}) {
     padding: 40px;
+    padding: 40px 120px;
+    justify-content: space-between;
   }
 `;
 
@@ -29,11 +32,17 @@ export const ListItemStyled = styled.li`
 `;
 
 export const CountTextStyled = styled.p`
+  width: 88px;
+  text-align: right;
   color: ${colors.colorText};
-  font-size: 28px;
+  font-size: 20px;
   font-weight: 500;
-  line-height: 1.14; 
+  line-height: 1.14;
   letter-spacing: -0.56px;
+  @media screen and (min-width: ${mediaSizes.tablet}) {
+    width: 120px;
+    font-size: 28px;
+  }
 `;
 
 export const TextStyled = styled.p`

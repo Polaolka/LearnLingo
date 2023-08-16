@@ -54,6 +54,9 @@ export const ImgThumbStyled = styled.div`
     max-width: 568px;
     padding: 98px 64px;
   }
+  @media screen and (max-width: ${mediaSizes.tablet}) {
+    height: 400px;
+  }
 `;
 
 export const FaceImgStyled = styled.img`
@@ -68,6 +71,10 @@ export const MacImgStyled = styled.img`
   left: 50%;
   transform: translate(-50%);
   bottom: 0px;
+  @media screen and (max-width: ${mediaSizes.tablet}) {
+    width: 250px;
+  }
+
 `;
 
 export const Text = styled.div`

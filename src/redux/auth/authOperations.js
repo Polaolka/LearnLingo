@@ -10,7 +10,6 @@ import {
   export const registerUser = createAsyncThunk(
     "auth/registerUser",
     async (newUserData, { rejectWithValue }) => {
-      console.log(newUserData);
       try {
         await createUserWithEmailAndPassword(
           auth,
@@ -39,7 +38,6 @@ import {
           userData.password
         );
         const { uid, displayName, email } = user;
-        console.log("currentUser", uid, displayName, email);
         return { uid, displayName, email };
       } catch (error) {
         return rejectWithValue(error.message);

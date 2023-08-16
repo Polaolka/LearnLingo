@@ -5,6 +5,7 @@ import { HiOutlineBookOpen } from "react-icons/hi";
 import { HiStar } from "react-icons/hi";
 
 import { mediaSizes } from "constants";
+import { transition } from "helpers";
 
 export const TeacherCardStyled = styled.div`
   position: relative;
@@ -142,17 +143,28 @@ export const HeartLineStyled = styled(HiOutlineHeart)`
   right: 24px;
 
   transform: scale(1);
-  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  cursor: pointer;
+  transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  ${transition('opacity')};
+  &:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+  }
 `;
 
 export const HeartFillStyled = styled(HiHeart)`
   position: absolute;
   top: 24px;
   right: 24px;
-
-  transform: scale(1);
-  transition: transform 500ms cubic-bezier(0.39, 0.575, 0.565, 1);
   fill: ${colors.colorOrange};
+  transform: scale(1);
+  cursor: pointer;
+  transition: transform 300ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  ${transition('opacity')};
+  &:hover {
+    transform: scale(1.02);
+    opacity: 0.8;
+  }
 `;
 
 export const BookIconStyled = styled(HiOutlineBookOpen)`
@@ -220,6 +232,11 @@ export const ReadMoreBtn = styled.button`
   border: none;
   margin-right: auto;
   margin-bottom: 32px;
+  cursor: pointer;
+  transition: color 200ms cubic-bezier(0.39, 0.575, 0.565, 1);
+  &:hover {
+    color: ${colors.colorOrange};
+  }
 `;
 
 export const TeacherDescr = styled.p`

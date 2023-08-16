@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { colors } from "constants";
 
-export const FaworitesPageStyled = styled.div`
-  padding-top: 96px;
+export const FavoritesPageStyled = styled.div`
+  padding-top: 112px;
   flex-direction: column;
   display: flex;
   gap: 24px;

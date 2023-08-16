@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button } from "components/Styled/Button.styled";
-import { FaworitesTeachersStyled } from "./FaworitesTeachers.styled";
+
 import TeacherCard from "components/TeacherCard/TeacherCard";
 import { getAllTeachers } from "redux/teachers/teachersOperations";
 import Filter from "components/Filter/Filter";
 import Container from "components/Container/Container";
 import { Caption } from "components/Form/Form.styled";
+import { FavoritesTeachersStyled } from "./FavoritesTeachers.styled";
 
 const CARDS_COUNT = 4;
 
-function FaworitesTeachers() {
+function FavoritesTeachers() {
 
   const dispatch = useDispatch();
   const scrollRef = useRef(null);
@@ -54,7 +55,7 @@ function FaworitesTeachers() {
             setLanguageFilter={(data) => setLanguageFilter(data)}
             setLevelFilter={(data) => setLevelFilter(data)}
             setPriceFilter={(data) => setPriceFilter(data)}/>
-      <FaworitesTeachersStyled>
+      <FavoritesTeachersStyled>
       {displayedTeachers?.length > 0 ? (
           displayedTeachers?.map((el) => (
             <TeacherCard key={el.id} teacher={el} levelFilter={levelFilter} />
@@ -62,8 +63,8 @@ function FaworitesTeachers() {
         ) : (
           <Caption>Unfortunately, no teacher was found.</Caption>
         )}
-      </FaworitesTeachersStyled>
-      {displayedTeachers?.length > CARDS_COUNT && (
+      </FavoritesTeachersStyled>
+      {filteredTeachersOnSelect?.length > CARDS_COUNT && (
         <Button onClick={loadMoreHandle} className="loadMore">
           Load more
         </Button>
@@ -74,4 +75,4 @@ function FaworitesTeachers() {
   );
 }
 
-export default FaworitesTeachers;
+export default FavoritesTeachers;

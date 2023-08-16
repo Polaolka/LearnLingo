@@ -63,7 +63,7 @@ function Teachers() {
           <Caption>Unfortunately, no teacher was found.</Caption>
         )}
       </TeachersStyled>)}
-      {displayedTeachers?.length > CARDS_COUNT && (
+      {filteredTeachers?.length > CARDS_COUNT && (
         <Button onClick={loadMoreHandle} className="loadMore">
           Load more
         </Button>

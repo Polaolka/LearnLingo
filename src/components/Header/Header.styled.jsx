@@ -31,6 +31,10 @@ export const HeaderLinksBox = styled.nav`
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  &.mobile {
+    color: ${colors.colorWhite};
+    flex-direction: column;
+  }
 `;
 
 export const LinkStyled = styled(NavLink)`
@@ -83,6 +87,9 @@ export const LogInIcon = styled(FiLogIn)`
   color: ${colors.colorOrange};
   margin-right: 8px;
   cursor: pointer;
+  &.mobile {
+    stroke: ${colors.colorWhite};
+  }
 `;
 
 export const LogOutIcon = styled(FiLogOut)`
@@ -91,6 +98,9 @@ export const LogOutIcon = styled(FiLogOut)`
   color: ${colors.colorOrange};
   margin-right: 8px;
   cursor: pointer;
+  &.mobile {
+    stroke: ${colors.colorWhite};
+  }
 `;
 
 export const HelloStyled = styled.p`
@@ -98,6 +108,9 @@ export const HelloStyled = styled.p`
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
+  &.mobile {
+    color: ${colors.colorWhite};
+  }
 `;
 
 export const LogInBtn = styled.button`
@@ -115,6 +128,9 @@ export const LogInBtn = styled.button`
   transition: color 300ms ease-in-out;
   &:hover {
     color: ${colors.colorOrange};
+  }
+  &.mobile {
+    color: ${colors.colorWhite};
   }
 `;
 

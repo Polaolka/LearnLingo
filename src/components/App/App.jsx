@@ -10,7 +10,7 @@ import { PrivateRoute } from "components/PrivateRoute";
 
 const HomePage = lazy(() => import("pages/HomePage"));
 const CardsPage = lazy(() => import("pages/CardsPage"));
-const FaworitesPage = lazy(() => import("pages/FaworitesPage"));
+const FavoritesPage = lazy(() => import("pages/FavoritesPage"));
 
 function App() {
   const dispatch = useDispatch();
@@ -27,9 +27,9 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path="teachers" element={<CardsPage />} />
             <Route
-              path="/faworites"
+              path="/favorites"
               element={
-                <PrivateRoute redirectTo="/" component={<FaworitesPage />} />
+                <PrivateRoute redirectTo="/" component={<FavoritesPage />} />
               }
             />
             <Route path="*" element={<HomePage />} />

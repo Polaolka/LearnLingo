@@ -1,9 +1,11 @@
-import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
-import { mediaSizes } from 'constants/media';
-import { colors } from 'constants';
+import styled from "@emotion/styled";
+import { NavLink } from "react-router-dom";
+import { mediaSizes } from "constants/media";
+import { colors } from "constants";
 
 export const Menu = styled.div`
+  height: 100vh;
+  width: 100vw;
   position: fixed;
   left: 0;
   top: 80px;
@@ -18,7 +20,6 @@ export const Menu = styled.div`
 `;
 
 export const Link = styled(NavLink)`
-
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
@@ -29,7 +30,6 @@ export const Link = styled(NavLink)`
   @media screen and (min-width: ${mediaSizes.mobile}) {
     font-size: 24px;
     line-height: 1.2;
-    
   }
 
   &.active {

@@ -11,7 +11,7 @@ import {
   HelloStyled,
   LogOutIcon,
   MenuButton,
-  Icon
+  Icon,
 } from "./Header.styled";
 import { RegisterForm } from "components/RegisterForm/RegisterForm";
 import { LoginForm } from "components/LoginForm/LoginForm";
@@ -22,7 +22,7 @@ import { logOut } from "redux/auth/authOperations";
 import { useLocation } from "react-router-dom";
 import Container from "components/Container/Container";
 import { mediaSizes } from "constants";
-import { RiMenuFill, RiCloseLine } from 'react-icons/ri';
+import { RiMenuFill, RiCloseLine } from "react-icons/ri";
 import MobileMenu from "components/MobileMenu/MobileMenu";
 
 function Header() {
@@ -41,7 +41,7 @@ function Header() {
     switch (pathname) {
       case "/teachers":
         return 1;
-      case "/faworites":
+      case "/favorites":
         return 2;
       case "/":
         return 0;
@@ -51,8 +51,8 @@ function Header() {
   }
 
   const clickHandler = useCallback(() => {
-    setIsMobileMenuOpen(state => !state);
-  }, [])
+    setIsMobileMenuOpen((state) => !state);
+  }, []);
 
   useEffect(() => {
     if (
@@ -62,8 +62,8 @@ function Header() {
       setValue(1);
     }
     if (
-      location.pathname === "/faworites" ||
-      location.pathname.startsWith("/faworites")
+      location.pathname === "/favorites" ||
+      location.pathname.startsWith("/favorites")
     ) {
       setValue(2);
     }
@@ -105,69 +105,70 @@ function Header() {
           <HeaderWrapper>
             <Logo setValue={setValue} />
             {!showBurgerIcon && (
-              <HeaderLinksBox>
-                <LinkStyled
-                  to="/"
-                  className={value === 0 ? "activeLink" : ""}
-                  onClick={() => setValue(0)}
-                >
-                  Home
-                </LinkStyled>
-                <LinkStyled
-                  to="/teachers"
-                  className={value === 1 ? "activeLink" : ""}
-                  onClick={() => setValue(1)}
-                >
-                  Teachers
-                </LinkStyled>
-                {isAuth && (
+              <>
+                <HeaderLinksBox>
                   <LinkStyled
-                    to="/faworites"
-                    className={value === 2 ? "activeLink" : ""}
-                    onClick={() => setValue(2)}
+                    to="/"
+                    className={value === 0 ? "activeLink" : ""}
+                    onClick={() => setValue(0)}
                   >
-                    Faworites
+                    Home
                   </LinkStyled>
-                )}
-              </HeaderLinksBox>
+                  <LinkStyled
+                    to="/teachers"
+                    className={value === 1 ? "activeLink" : ""}
+                    onClick={() => setValue(1)}
+                  >
+                    Teachers
+                  </LinkStyled>
+                  {isAuth && (
+                    <LinkStyled
+                      to="/favorites"
+                      className={value === 2 ? "activeLink" : ""}
+                      onClick={() => setValue(2)}
+                    >
+                      Favorites
+                    </LinkStyled>
+                  )}
+                </HeaderLinksBox>
+                <HeaderLinksBox>
+                  {!isAuth ? (
+                    <>
+                      <LogInBtn type="button" onClick={openLoginModal}>
+                        <LogInIcon />
+                        Log in
+                      </LogInBtn>
+                      <RegistrationBtn
+                        type="button"
+                        onClick={openRegisterModal}
+                      >
+                        Registration
+                      </RegistrationBtn>
+                    </>
+                  ) : (
+                    <>
+                      <HelloStyled>Hello, {login}!</HelloStyled>
+                      <LogInBtn type="button" onClick={logOuthandle}>
+                        <LogOutIcon />
+                        Log out
+                      </LogInBtn>
+                    </>
+                  )}
+                </HeaderLinksBox>
+              </>
             )}
 
-            <HeaderLinksBox>
-              {!isAuth ? (
-                <>
-                  <LogInBtn type="button" onClick={openLoginModal}>
-                    <LogInIcon />
-                    Log in
-                  </LogInBtn>
-                  <RegistrationBtn type="button" onClick={openRegisterModal}>
-                    Registration
-                  </RegistrationBtn>
-                </>
-              ) : (
-                <>
-                  <HelloStyled>Hello, {login}!</HelloStyled>
-                  <LogInBtn type="button" onClick={logOuthandle}>
-                    <LogOutIcon />
-                    Log out
-                  </LogInBtn>
-                </>
-              )}
-            </HeaderLinksBox>
-
             {showBurgerIcon && (
-            <MenuButton
-              onClick={clickHandler}
-            >
-              {isMobileMenuOpen ? (
-                <Icon>
-                  <RiCloseLine />
-                </Icon>
-              ) : (
-                <RiMenuFill width="18" height="12" />
-              )}
-            </MenuButton>
-          )}
-
+              <MenuButton onClick={clickHandler}>
+                {isMobileMenuOpen ? (
+                  <Icon>
+                    <RiCloseLine />
+                  </Icon>
+                ) : (
+                  <RiMenuFill width="18" height="12" />
+                )}
+              </MenuButton>
+            )}
           </HeaderWrapper>
         </Container>
       </HeaderStyled>
@@ -178,7 +179,12 @@ function Header() {
         <RegisterForm setIsRegModalOpened={setIsRegModalOpened} />
       </Modal>
       {isMobileMenuOpen && showBurgerIcon && (
-        <MobileMenu handleClick={clickHandler} />
+        <MobileMenu
+          handleClick={clickHandler}
+          openLoginModal={openLoginModal}
+          openRegisterModal={openRegisterModal}
+          login={login}
+        />
       )}
     </>
   );
