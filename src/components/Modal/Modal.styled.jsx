@@ -11,7 +11,7 @@ export const ModalStyled = styled.div`
   top: ${headerHeight};
   left: 0;
   width: 100%;
-  max-height: calc(100% - ${headerHeight});
+  height: 100vh;
   opacity: 1;
   ${transition("visible")};
 
